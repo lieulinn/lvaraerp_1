@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0ea5e9" />
+  <title>LvaraERP | PT Riliv Psikologi Indonesia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">L</div>
+        <div><div class="brand-name">Lvara<span>ERP</span></div><div class="brand-sub">RILIV PSIKOLOGI INDONESIA</div></div>
+      </div>
+      <div class="workspace-label">WORKSPACE</div>
+      <nav class="nav">
+        <button class="nav-item active" data-page="dashboard"><span class="nav-icon">▦</span> Dashboard</button>
+        <button class="nav-item" data-page="appointments"><span class="nav-icon">◷</span> Jadwal Konseling <span class="nav-count">8</span></button>
+        <button class="nav-item" data-page="clients"><span class="nav-icon">♙</span> Klien</button>
+        <button class="nav-item" data-page="therapists"><span class="nav-icon">✳</span> Psikolog</button>
+        <button class="nav-item" data-page="services"><span class="nav-icon">◇</span> Layanan</button>
+        <div class="nav-divider"></div>
+        <div class="workspace-label">MANAJEMEN</div>
+        <button class="nav-item" data-page="finance"><span class="nav-icon">↗</span> Keuangan</button>
+        <button class="nav-item" data-page="inventory"><span class="nav-icon">▤</span> Sumber Daya</button>
+        <button class="nav-item" data-page="reports"><span class="nav-icon">▥</span> Laporan</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">✦</div><strong>Butuh bantuan?</strong><p>Hubungi tim operasional jika ada kendala.</p><button id="helpBtn">Pusat bantuan ↗</button></div>
+        <div class="profile">
+          <div class="avatar avatar-purple">NA</div>
+          <div class="profile-info"><strong>Nur Aisyah</strong><span>Admin Operasional</span></div>
+          <button class="more-btn" aria-label="Menu profil">•••</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="top-left"><button class="mobile-menu" id="mobileMenu" aria-label="Buka menu">☰</button><div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumbPage">Dashboard</strong></div></div>
+        <div class="top-actions"><div class="date-chip"><span>◷</span> <span id="todayDate">Hari ini</span></div><button class="icon-button" id="themeToggle" title="Ganti tema">◐</button><button class="notification icon-button" id="notifBtn" title="Notifikasi">♧<i></i></button><div class="top-avatar">NA</div></div>
+      </header>
+
+      <section class="page active" id="page-dashboard">
+        <div class="page-heading"><div><div class="eyebrow">SELAMAT PAGI, NUR AISYAH <span class="sun">✦</span></div><h1>Ringkasan operasional</h1><p>Pantau layanan konseling dan operasional Riliv dalam satu tempat.</p></div><button class="primary-btn" id="quickAdd"><span>＋</span> Buat jadwal baru</button></div>
+        <div class="welcome-banner"><div class="banner-copy"><div class="banner-tag"><span class="pulse"></span> OPERASIONAL HARI INI</div><h2>Merawat kesehatan mental,<br><em>dimulai dari layanan yang baik.</em></h2><p>Semua tim, jadwal, dan kebutuhan layanan terorganisir dalam satu dashboard.</p></div><div class="banner-art"><div class="art-circle circle-one"></div><div class="art-circle circle-two"></div><div class="art-leaf">✳</div><div class="art-orbit">✦</div></div></div>
+        <div class="section-heading"><div><h2>Ikhtisar bisnis</h2><p>Performa layanan pada periode berjalan</p></div><select id="periodSelect" class="select-control"><option value="month">30 hari terakhir</option><option value="week">7 hari terakhir</option><option value="year">Tahun ini</option></select></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total sesi konseling</span><span class="stat-icon lavender">◷</span></div><div class="stat-value" id="sessionsValue">1.284</div><div class="stat-foot"><span class="trend positive">↗ 12,8%</span><span>vs periode sebelumnya</span></div><div class="mini-bars" aria-hidden="true"><i style="height:36%"></i><i style="height:48%"></i><i style="height:42%"></i><i style="height:62%"></i><i style="height:52%"></i><i style="height:75%"></i><i style="height:66%"></i><i style="height:92%"></i><i style="height:80%"></i><i style="height:100%"></i></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Klien aktif</span><span class="stat-icon mint">♙</span></div><div class="stat-value">846</div><div class="stat-foot"><span class="trend positive">↗ 8,2%</span><span>vs periode sebelumnya</span></div><div class="stat-note"><span class="dot dot-mint"></span> 64 klien baru bulan ini</div></article>
+          <article class="stat-card"><div class="stat-top"><span>Pendapatan layanan</span><span class="stat-icon peach">↗</span></div><div class="stat-value" id="revenueValue">Rp 186,4 jt</div><div class="stat-foot"><span class="trend positive">↗ 14,6%</span><span>vs periode sebelumnya</span></div><div class="stat-note">Target bulanan <strong>82%</strong> tercapai</div><div class="progress"><span style="width:82%"></span></div></article>
+          <article class="stat-card"><div class="stat-top"><span>Psikolog aktif</span><span class="stat-icon blue">✳</span></div><div class="stat-value">32</div><div class="stat-foot"><span class="trend neutral">● Stabil</span><span>tersedia untuk sesi</span></div><div class="stat-note"><span class="dot dot-blue"></span> 7 psikolog tersedia hari ini</div></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel revenue-panel"><div class="panel-head"><div><h3>Tren pendapatan</h3><p>Rekap pendapatan layanan konseling</p></div><div class="legend"><span></span> Pendapatan</div></div><div class="chart-summary"><strong>Rp 186.400.000</strong><span class="trend positive">↗ 14,6%</span></div><div class="chart" id="revenueChart"><div class="y-labels"><span>200 jt</span><span>150 jt</span><span>100 jt</span><span>50 jt</span><span>0</span></div><div class="chart-area"><div class="grid-lines"><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 620 210" preserveAspectRatio="none" role="img" aria-label="Grafik tren pendapatan"><defs><linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#38bdf8" stop-opacity=".38"/><stop offset="100%" stop-color="#0284c7" stop-opacity="0"/></linearGradient></defs><path d="M0 166 C32 156 42 144 68 151 S106 126 137 139 S177 100 206 118 S247 105 275 92 S316 120 344 89 S385 72 413 85 S453 47 482 64 S520 43 550 48 S592 22 620 15 L620 210 L0 210Z" fill="url(#areaFill)"/><path d="M0 166 C32 156 42 144 68 151 S106 126 137 139 S177 100 206 118 S247 105 275 92 S316 120 344 89 S385 72 413 85 S453 47 482 64 S520 43 550 48 S592 22 620 15" fill="none" stroke="#0ea5e9" stroke-width="3.5" stroke-linecap="round"/></svg><div class="x-labels"><span>1 Okt</span><span>5 Okt</span><span>10 Okt</span><span>15 Okt</span><span>20 Okt</span><span>25 Okt</span><span>30 Okt</span></div></div></div></article>
+          <article class="panel channel-panel"><div class="panel-head"><div><h3>Status jadwal</h3><p>Distribusi sesi hari ini</p></div><button class="dots-btn" aria-label="Pilihan">•••</button></div><div class="donut-wrap"><div class="donut"><div class="donut-center"><strong id="totalToday">48</strong><span>Total sesi</span></div></div></div><div class="status-legend"><div><span class="legend-dot done"></span><span>Selesai</span><strong>24</strong><small>50%</small></div><div><span class="legend-dot upcoming"></span><span>Akan datang</span><strong>16</strong><small>33%</small></div><div><span class="legend-dot pending"></span><span>Menunggu</span><strong>8</strong><small>17%</small></div></div></article>
+        </div>
+        <div class="section-heading lower-heading"><div><h2>Aktivitas terbaru</h2><p>Pembaruan terakhir dari tim operasional</p></div><button class="text-btn" data-goto="appointments">Lihat semua <span>→</span></button></div>
+        <article class="panel activity-panel"><div class="table-wrap"><table><thead><tr><th>AKTIVITAS</th><th>DETAIL</th><th>WAKTU</th><th>STATUS</th></tr></thead><tbody id="activityRows"><tr><td><div class="activity-title"><span class="activity-symbol purple-bg">◷</span><strong>Jadwal konseling dibuat</strong></div></td><td>Klien #CL-1028 · Sesi online</td><td>09:42</td><td><span class="pill pill-blue">Terjadwal</span></td></tr><tr><td><div class="activity-title"><span class="activity-symbol green-bg">✓</span><strong>Pembayaran diterima</strong></div></td><td>Paket Konseling Personal</td><td>09:15</td><td><span class="pill pill-green">Berhasil</span></td></tr><tr><td><div class="activity-title"><span class="activity-symbol orange-bg">♙</span><strong>Klien baru terdaftar</strong></div></td><td>Klien #CL-1042</td><td>08:58</td><td><span class="pill pill-purple">Baru</span></td></tr></tbody></table></div></article>
+        <footer class="footer">© 2026 LvaraERP · PT Riliv Psikologi Indonesia <span>Dirancang untuk operasional layanan yang lebih teratur.</span></footer>
+      </section>
+
+      <section class="page" id="page-appointments">
+        <div class="page-heading"><div><div class="eyebrow">OPERASIONAL LAYANAN</div><h1>Jadwal konseling</h1><p>Kelola sesi, waktu, dan status konseling klien.</p></div><button class="primary-btn" id="addAppointment">＋ Buat jadwal baru</button></div>
+        <div class="toolbar"><div class="search-box"><span>⌕</span><input id="appointmentSearch" placeholder="Cari nama klien atau psikolog..." /></div><select id="appointmentFilter" class="select-control"><option value="all">Semua status</option><option value="Terjadwal">Terjadwal</option><option value="Selesai">Selesai</option><option value="Menunggu">Menunggu</option></select></div>
+        <article class="panel"><div class="table-wrap"><table><thead><tr><th>KLIEN</th><th>PSIKOLOG</th><th>JADWAL</th><th>JENIS SESI</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody id="appointmentRows"></tbody></table></div><div class="empty-state hidden" id="appointmentEmpty">Tidak ada jadwal yang cocok.</div></article>
+        <footer class="footer">© 2026 LvaraERP · PT Riliv Psikologi Indonesia</footer>
+      </section>
+
+      <section class="page" id="page-clients">
+        <div class="page-heading"><div><div class="eyebrow">DATA LAYANAN</div><h1>Manajemen klien</h1><p>Kelola informasi administrasi klien dengan tertib.</p></div><button class="primary-btn" id="addClient">＋ Tambah klien</button></div>
+        <div class="stats-grid compact-stats"><article class="stat-card"><div class="stat-top"><span>Total klien</span><span class="stat-icon lavender">♙</span></div><div class="stat-value" id="clientCount">6</div><div class="stat-note">Data klien tersimpan di perangkat ini</div></article><article class="stat-card"><div class="stat-top"><span>Klien aktif</span><span class="stat-icon mint">✓</span></div><div class="stat-value" id="activeClientCount">5</div><div class="stat-note">Memiliki layanan berjalan</div></article><article class="stat-card"><div class="stat-top"><span>Klien baru</span><span class="stat-icon peach">✦</span></div><div class="stat-value">64</div><div class="stat-note">Ilustrasi data periode ini</div></article></div>
+        <div class="toolbar"><div class="search-box"><span>⌕</span><input id="clientSearch" placeholder="Cari nama, ID, atau email..." /></div><select id="clientFilter" class="select-control"><option value="all">Semua status</option><option value="Aktif">Aktif</option><option value="Nonaktif">Nonaktif</option></select></div>
+        <article class="panel"><div class="table-wrap"><table><thead><tr><th>ID KLIEN</th><th>NAMA KLIEN</th><th>EMAIL</th><th>LAYANAN</th><th>STATUS</th><th>AKSI</th></tr></thead><tbody id="clientRows"></tbody></table></div><div class="empty-state hidden" id="clientEmpty">Klien tidak ditemukan.</div></article>
+        <div class="privacy-note">ⓘ Data contoh untuk demonstrasi. Hindari memasukkan catatan klinis atau informasi kesehatan sensitif ke versi demo ini.</div>
+        <footer class="footer">© 2026 LvaraERP · PT Riliv Psikologi Indonesia</footer>
+      </section>
+
+      <section class="page" id="page-therapists">
+        <div class="page-heading"><div><div class="eyebrow">TIM PROFESIONAL</div><h1>Manajemen psikolog</h1><p>Pantau ketersediaan tim profesional dan kapasitas layanan.</p></div><button class="primary-btn" id="addTherapist">＋ Tambah psikolog</button></div>
+        <div class="therapist-grid" id="therapistGrid"></div>
+        <footer class="footer">© 2026 LvaraERP · PT Riliv Psikologi Indonesia</footer>
+      </section>
+
+      <section class="page" id="page-services">
+        <div class="page-heading"><div><div class="eyebrow">KATALOG LAYANAN</div><h1>Layanan konseling</h1><p>Ringkasan jenis layanan dan tarif yang dikonfigurasi.</p></div><button class="primary-btn" id="addService">＋ Tambah layanan</button></div>
+        <div class="service-grid" id="serviceGrid"></div>
+        <footer class="footer">© 2026 LvaraERP · PT Riliv Psikologi Indonesia</footer>
+      </section>
+
+      <section class="page" id="page-finance">
+        <div class="page-heading"><div><div class="eyebrow">KEUANGAN</div><h1>Keuangan layanan</h1><p>Ikhtisar transaksi contoh untuk memantau pemasukan.</p></div><button class="primary-btn" id="exportFinance">↓ Ekspor CSV</button></div>
+        <div class="stats-grid"><article class="stat-card"><div class="stat-top"><span>Total pemasukan</span><span class="stat-icon mint">↗</span></div><div class="stat-value">Rp 186,4 jt</div><div class="stat-foot"><span class="trend positive">↗ 14,6%</span><span>bulan ini</span></div></article><article class="stat-card"><div class="stat-top"><span>Transaksi berhasil</span><span class="stat-icon lavender">✓</span></div><div class="stat-value">428</div><div class="stat-note">Transaksi contoh</div></article><article class="stat-card"><div class="stat-top"><span>Menunggu pembayaran</span><span class="stat-icon peach">◷</span></div><div class="stat-value">12</div><div class="stat-note">Perlu tindak lanjut admin</div></article><article class="stat-card"><div class="stat-top"><span>Rata-rata transaksi</span><span class="stat-icon blue">↗</span></div><div class="stat-value">Rp 435 rb</div><div class="stat-note">Per sesi / paket</div></article></div>
+        <article class="panel"><div class="panel-head"><div><h3>Transaksi terbaru</h3><p>Daftar pembayaran layanan</p></div></div><div class="table-wrap"><table><thead><tr><th>ID TRANSAKSI</th><th>PELANGGAN</th><th>LAYANAN</th><th>TANGGAL</th><th>NOMINAL</th><th>STATUS</th></tr></thead><tbody id="financeRows"></tbody></table></div></article>
+        <footer class="footer">© 2026 LvaraERP · PT Riliv Psikologi Indonesia</footer>
+      </section>
+
+      <section class="page" id="page-inventory">
+        <div class="page-heading"><div><div class="eyebrow">SUMBER DAYA OPERASIONAL</div><h1>Sumber daya</h1><p>Pantau kebutuhan operasional non-klinis dan fasilitas kerja.</p></div><button class="primary-btn" id="addResource">＋ Tambah item</button></div>
+        <div class="resource-grid" id="resourceGrid"></div>
+        <div class="privacy-note">Modul ini untuk inventaris operasional. Jangan gunakan untuk menyimpan rekam medis atau catatan terapi.</div>
+        <footer class="footer">© 2026 LvaraERP · PT Riliv Psikologi Indonesia</footer>
+      </section>
+
+      <section class="page" id="page-reports">
+        <div class="page-heading"><div><div class="eyebrow">ANALISIS & EVALUASI</div><h1>Laporan operasional</h1><p>Ringkasan indikator utama untuk mendukung keputusan tim.</p></div><button class="primary-btn" id="exportReport">↓ Ekspor ringkasan</button></div>
+        <div class="report-grid"><article class="panel report-card"><span class="report-icon lavender">◷</span><h3>Utilisasi jadwal</h3><div class="report-number">78%</div><div class="progress"><span style="width:78%"></span></div><p>Proporsi slot konseling yang terisi.</p></article><article class="panel report-card"><span class="report-icon mint">✓</span><h3>Tingkat penyelesaian</h3><div class="report-number">92%</div><div class="progress mint-progress"><span style="width:92%"></span></div><p>Sesi yang selesai dari jadwal terkonfirmasi.</p></article><article class="panel report-card"><span class="report-icon peach">↗</span><h3>Pertumbuhan pendapatan</h3><div class="report-number">+14,6%</div><div class="progress peach-progress"><span style="width:73%"></span></div><p>Dibandingkan periode sebelumnya.</p></article></div>
+        <article class="panel"><div class="panel-head"><div><h3>Ringkasan indikator</h3><p>Angka ilustratif untuk demo antarmuka</p></div></div><div class="table-wrap"><table><thead><tr><th>INDIKATOR</th><th>HASIL</th><th>TARGET</th><th>KETERANGAN</th></tr></thead><tbody><tr><td>Sesi konseling</td><td>1.284</td><td>1.400</td><td><span class="pill pill-blue">Dalam progres</span></td></tr><tr><td>Klien aktif</td><td>846</td><td>800</td><td><span class="pill pill-green">Tercapai</span></td></tr><tr><td>Pendapatan layanan</td><td>Rp 186,4 jt</td><td>Rp 225 jt</td><td><span class="pill pill-blue">Dalam progres</span></td></tr><tr><td>Kepuasan layanan</td><td>4,8 / 5</td><td>4,7 / 5</td><td><span class="pill pill-green">Tercapai</span></td></tr></tbody></table></div></article>
+        <footer class="footer">© 2026 LvaraERP · PT Riliv Psikologi Indonesia</footer>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><div><span class="eyebrow" id="modalEyebrow">FORMULIR</span><h2 id="modalTitle">Tambah data</h2></div><button class="close-modal" id="closeModal" aria-label="Tutup">×</button></div><form id="modalForm"><div id="modalFields" class="modal-fields"></div><div class="modal-actions"><button type="button" class="secondary-btn" id="cancelModal">Batal</button><button type="submit" class="primary-btn">Simpan data</button></div></form></div>
+  </div>
+  <div class="toast" id="toast"><span>✓</span><div><strong>Berhasil</strong><p>Data berhasil diperbarui.</p></div></div>
+  <script src="app.js"></script>
+</body>
+</html>
